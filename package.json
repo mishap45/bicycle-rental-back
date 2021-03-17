@@ -1,0 +1,18 @@
+{
+  "name": "bicycle-rental-back",
+  "version": "0.0.1",
+  "description": "back for bicycle rental",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "MiLov",
+  "license": "ISC",
+  "dependencies": {
+    "graphql": "^15.5.0",
+    "koa": "^2.13.1",
+    "koa-graphql": "^0.8.0",
+    "koa-mount": "^4.0.0",
+    "mongoose": "^5.12.0"
+  }
+}
