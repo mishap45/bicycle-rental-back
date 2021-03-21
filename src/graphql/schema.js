@@ -11,4 +11,9 @@ module.exports = buildSchema(`
   type Query {
     listEvents: [Event]
   }
+  type Mutation {
+    createEvent(title: String!, start: String, end: String, allDay: Boolean): Event
+    updateEvent(id: String!, title: String, start: String, end: String, allDay: Boolean): Event
+    deleteEvent(id: String!): String
+  }
 `);

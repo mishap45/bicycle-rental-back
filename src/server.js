@@ -6,10 +6,10 @@ const mongoose = require('mongoose');
 const root = require('./graphql/root');
 
 mongoose.connect(`mongodb://localhost/calendar`, {
-    useNewUrlParser: true
+    useNewUrlParser: true, useUnifiedTopology: true
 });
 
-const db = mongoose.connection
+const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', () => console.log('Database connected.'));
 
