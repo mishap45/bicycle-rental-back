@@ -1,19 +1,30 @@
 const { buildSchema } = require('graphql');
 
 module.exports = buildSchema(`
-  type Event {
+  type Login {
     id: ID,
-    title: String
-    allDay: Boolean
-    start: String,
-    end: String
+    email: String,
+    password: String,
+    birthday: String,
+    tarriff: String,
+    payCardNumber: String,
+    payCardDate: String,
+    payCardBackNumber: String
   }
   type Query {
-    listEvents: [Event]
+    listUsers: [Login]
   }
   type Mutation {
-    createEvent(title: String!, start: String, end: String, allDay: Boolean): Event
-    updateEvent(id: String!, title: String, start: String, end: String, allDay: Boolean): Event
-    deleteEvent(id: String!): String
+    createUser(
+      email: String!, 
+      password: String!, 
+      birthday: String!,
+      tarriff: String!,
+      payCardNumber: String!,
+      payCardDate: String!,
+      payCardBackNumber: String!
+    ): Login
+    updateUser(id: String!, tarriff: String!): Login
+    deleteUser(id: String!): String
   }
 `);

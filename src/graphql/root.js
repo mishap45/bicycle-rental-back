@@ -1,20 +1,20 @@
-const Event = require('../models/event');
+const Event = require('../models/bicycle_login');
 
 module.exports = {
-    listEvents() {
+    listUsers() {
         return Event.find();
     },
-    createEvent(input) {
+    createUser(input) {
         const newEvent = new Event(input);
         return newEvent.save();
     },
-    updateEvent(input) {
+    updateUser(input) {
         const { id, ...rest } = input;
         return Event.findByIdAndUpdate(id, { $set: rest }, { new: true }).catch(
             err => console.error(err)
         );
     },
-    deleteEvent({ id }) {
+    deleteUser({ id }) {
         return Event.findByIdAndDelete(id)
             .then(event => event.remove())
             .then(() => `${id} successfully deleted`)

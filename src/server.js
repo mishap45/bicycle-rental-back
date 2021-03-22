@@ -5,7 +5,7 @@ const schema = require('./graphql/schema');
 const mongoose = require('mongoose');
 const root = require('./graphql/root');
 
-mongoose.connect(`mongodb://localhost/calendar`, {
+mongoose.connect(`mongodb://localhost/bicycle_login`, {
     useNewUrlParser: true, useUnifiedTopology: true
 });
 
